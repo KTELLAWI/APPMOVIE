@@ -1,6 +1,9 @@
 import React from 'react'
 
 function Result({ result, openPopup }) {
+	console.log(result.imdbID)
+		console.log(result.Title)
+
 	return (
 		<div className="result" onClick={() => openPopup(result.imdbID)}>
 			<img src={result.Poster} />
@@ -10,4 +13,3 @@ function Result({ result, openPopup }) {
 }
 
 export default Result
-

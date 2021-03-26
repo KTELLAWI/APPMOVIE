@@ -11,6 +11,7 @@ function App() {
     s: "",
     results: [],
     selected: {}
+    
   });
   const apiurl = "http://www.omdbapi.com/?apikey=dfe6d885";
 
@@ -34,25 +35,27 @@ function App() {
     });
   }
 
-  const openPopup = id => {
+ const openPopup = id => {
     axios(apiurl + "&i=" + id).then(({ data }) => {
       let result = data;
-
+   
       console.log(result);
-
+    
       setState(prevState => {
         return { ...prevState, selected: result }
       });
     });
   }
 
+
   const closePopup = () => {
     setState(prevState => {
       return { ...prevState, selected: {} }
     });
+
   }
 
-  return (
+   return (
     <div className="App">
       <header>
         <h1>Movie Database</h1>
